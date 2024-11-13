@@ -2,6 +2,7 @@ import 'package:app_dogs/data/models/pessoa_model.dart';
 import 'package:app_dogs/data/repositories/pessoa_repository.dart';
 import 'package:app_dogs/presentation/viewmodels/pessoa_viewmodel.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class PessoaEditPage extends StatefulWidget {
   final Pessoa pessoa;
@@ -135,6 +136,9 @@ class PessoaEditPageState extends State<PessoaEditPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
+                        inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Por favor entre com o Telefone';
@@ -199,6 +203,9 @@ class PessoaEditPageState extends State<PessoaEditPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
+                        inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Por favor entre com o Número';
@@ -221,6 +228,9 @@ class PessoaEditPageState extends State<PessoaEditPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
+                        inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                          ],
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Por favor entre com o CEP';

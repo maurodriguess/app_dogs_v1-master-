@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import '../../../data/models/dog_model.dart';
 import '../../../data/repositories/dog_repository.dart';
 import '../../viewmodels/dog_viewmodel.dart';
@@ -111,6 +112,9 @@ class DogEditPageState extends State<DogEditPage> {
                           ),
                         ),
                         keyboardType: TextInputType.number,
+                        inputFormatters: [
+                            FilteringTextInputFormatter.digitsOnly,
+                        ],
                         validator: (value) {
                           if (value == null || value.isEmpty) {
                             return 'Por favor entre com a idade';
